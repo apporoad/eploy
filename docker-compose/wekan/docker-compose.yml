@@ -1,0 +1,40 @@
+version: '2'
+services:
+  wekandb:
+    image: mongo:3.2.20
+    #-------------------------------------------------------------------------------------
+    container_name: wekan-db
+    restart: always
+    command: mongod --smallfiles --oplogSize 128
+    # 
+    ports:
+      - 27017:27017
+    networks:
+      - wekan-tier
+    expose:
+      - 27017
+    volumes:
+      - /docker/wekan/data:/data/db
+      - /docker/wekan/dump:/dump
+  wekan:
+    #---------------------------------------------------------------------------------
+    image: wekanteam/wekan:v2.17
+    #-------------------------------------------------------------------------------------
+    container_name: wekan-app
+    restart: always
+    networks:
+      - wekan-tier
+    #-------------------------------------------------------------------------------------
+    ports:
+      - 80:8080
+    environment:
+      - MONGO_URL=mongodb://wekandb:27017/wekan
+      #  改成你自己的地址
+      - ROOT_URL=http://localhost
+      - WITH_API=true
+      - BROWSER_POLICY_ENABLED=true
+    depends_on:
+      - wekandb
+networks:
+  wekan-tier:
+    driver: bridge

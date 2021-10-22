@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo1-ingress
+  namespace: default
+spec:
+  rules:
+    - host: yourHost.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: demo1
+                port:
+                  number: 8888

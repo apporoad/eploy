@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo1
+  labels:
+    app: demo1
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: demo1
+  template:
+    metadata:
+      labels:
+        app: demo1
+    spec:
+      containers:
+        - name: demo1
+          image: xxxxxxxxxxxxxxx:xxxx/demo1:0.0.1-SNAPSHOT
+          ports:
+            - containerPort: 8888
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /hi
+              port: 8888
+            initialDelaySeconds: 30
+            timeoutSeconds: 30
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: xxxx
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule

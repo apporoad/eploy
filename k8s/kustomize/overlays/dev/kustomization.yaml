@@ -1,0 +1,11 @@
+# 文件路径 demo/overlays/staging/kustomization.yaml
+namePrefix: dev-
+commonLabels:
+  variant: dev
+  org: xxx
+commonAnnotations:
+  note: Hello, I am dev!
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - map.yaml
