@@ -135,3 +135,11 @@ docker-compose up -d
 
 
  ```
+
+
+ ### mysql特殊配置
+ /etc/mysql/my.cnf
+ 添加配置 
+ ```conf
+sort_buffer_size=2M
+ ```
