@@ -45,6 +45,7 @@ step by step install deployments
 36. [minikube 安装](./docs/minikube.md)
 37. [k8s 使用范例](./docs/k8s.md)
 38. [svn 使用](./docs/svn.md)
+39. [安全测试工具](./docs/安全测试工具.xlsx)
 
 ## cmds
 
