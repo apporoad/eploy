@@ -46,6 +46,7 @@ step by step install deployments
 37. [k8s 使用范例](./docs/k8s.md)
 38. [svn 使用](./docs/svn.md)
 39. [安全测试工具](./docs/安全测试工具.xlsx)
+40. [openvas](./docs/openvas.md)
 
 ## cmds
 
@@ -55,4 +56,15 @@ $ cat test.json
 json='{ "timestamp" : 1484825894873, "test" : "test"}'
 ab -c 10 -n 1000 -p  test.json -T application/x-www-form-urlencoded  https://example.com/test
 #https://prabuddha.me/apache-bench-ab-post-json-api/
+```
+
+### 禁用selinux
+```bash
+sed -i 's/=enforcing/=disabled/' /etc/selinux/config
+```
+
+### 防火墙
+```bash
+firewall-cmd --zone=public --add-port=9392/tcp --permanent
+firewall-cmd --reload
 ```
