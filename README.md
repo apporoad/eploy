@@ -47,6 +47,7 @@ step by step install deployments
 38. [svn 使用](./docs/svn.md)
 39. [安全测试工具](./docs/安全测试工具.xlsx)
 40. [openvas](./docs/openvas.md)
+41. [minidoc 简单文档管理系统](./docs/mindoc.md)
 
 ## cmds
 
