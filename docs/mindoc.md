@@ -1,4 +1,5 @@
 
+## install by docker-compose
 ```bash
 vim docker-compose.yml
 ```
@@ -28,5 +29,23 @@ MinDoc_New:
   dns:
     - 223.5.5.5
     - 223.6.6.6
+
+```
+
+## nginx 代理设置
+
+```nginx
+server {
+        server_name xxx.xxxx.com;
+        listen 8000;
+        charset utf-8;
+        location / {
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_set_header Host            $http_host;
+                proxy_set_header   X-Forwarded-Proto $scheme;
+                proxy_pass http://127.0.0.1:8181/;
+        }
+    }
+
 
 ```
