@@ -48,6 +48,8 @@ step by step install deployments
 39. [安全测试工具](./docs/安全测试工具.xlsx)
 40. [openvas](./docs/openvas.md)
 41. [minidoc 简单文档管理系统](./docs/mindoc.md)
+42. [sshfs 文件共享](./docs/sshfs.md)
+43. [es elasticsearch相关](./docs/es.md)
 
 ## cmds
 
