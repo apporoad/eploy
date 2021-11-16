@@ -208,6 +208,27 @@ location / {
 }
 ```
 
+### 白名单
+```nginx
+  server {
+    listen 80;
+    if ($remote_addr !~ ^(192.168.0.202|192.168.0.203)) {
+        return 555;
+    }
+  }
+
+```
+
+### 黑名单
+```nginx
+  server {
+    listen 80;
+    if ($remote_addr ~* "第一个IP|第二个IP|第三个IP") {
+        return 555;
+    }
+  }
+
+```
 
 
 ### 定时删除文件脚本
@@ -238,3 +259,5 @@ crontab -e
 ```sh
 0 0 * * *  /etc/nginx/script/clear_log.sh
 ```
+
+
