@@ -50,6 +50,7 @@ step by step install deployments
 41. [minidoc 简单文档管理系统](./docs/mindoc.md)
 42. [sshfs 文件共享](./docs/sshfs.md)
 43. [es elasticsearch相关](./docs/es.md)
+44. [uni-app 脚本打包](./docs/uniapp.md)
 
 ## cmds
 
