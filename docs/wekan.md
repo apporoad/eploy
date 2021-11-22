@@ -1,3 +1,24 @@
+
+### docker-compose
+```yaml
+wekan:
+  image: mquandalle/wekan
+  restart: always
+  links:
+    - wekandb
+  environment:
+    - MONGO_URL=mongodb://wekandb/wekan
+    - ROOT_URL=http://192.168.0.202:11544
+  ports:
+    - 11544:8080
+
+wekandb:
+   image: mongo
+   volumes:
+     - /data/wekan/:/data/db
+```
+
+
 ### snap first
 
 ```bash
