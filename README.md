@@ -52,6 +52,7 @@ step by step install deployments
 43. [es elasticsearch相关](./docs/es.md)
 44. [uni-app 脚本打包](./docs/uniapp.md)
 45. [json自定义编辑](./packs/jsonEdit.zip)
+46. [showdoc api接口管理](./docs/showdoc.md)
 
 ## cmds
 
