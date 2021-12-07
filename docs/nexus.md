@@ -1,4 +1,4 @@
-## docker-compose 方式安装  没有成功
+## docker-compose 方式安装
 
 ```bash
 mkdir -p /data/nexus
@@ -14,10 +14,11 @@ services:
       restart: always
       image: sonatype/nexus3:3.7.1
       volumes:
-        - /home/nexus:/nexus-data
+        - /data/nexus:/nexus-data
       ports:
         - "8082:8081"
         - "8888:8888"
+        - "8889:8889"
 ```
 其中8888为 docker 镜像的HTTP connector ， 可以指定其他的
 
