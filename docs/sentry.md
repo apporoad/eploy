@@ -20,7 +20,19 @@ mail.password: 'xxxxxxxxxx'
 mail.use-tls: true
 # mail.use-ssl: false
 # The email address to send on behalf of
-mail.from: 'xxxxxxxx@xxxxxxxxxxx.com'
+mail.from: 'xxxxxxxx@xxxxxxxxxxx.com同mail.username'
+```
+
+如果有25端口
+```config
+
+mail.host: 'smtp.exmail.qq.com'
+mail.port: 25
+mail.username: 'xxxx@xxxxx.com'
+mail.password: 'xxxxxxxxxx'
+
+# The email address to send on behalf of
+mail.from: 'xxxxxxxx@xxxxxxxxxxx.com同mail.username'
 ```
 
 ## 插件
