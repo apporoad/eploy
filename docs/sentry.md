@@ -44,8 +44,14 @@ docker-compose up -d
 ## 组件缺失
 
 ```bash
+
 docker exec -it sentry-self-hosted-web-1 /bin/sh
 pip install django-smtp-ssl
 docker exec -it sentry-self-hosted-worker-1 /bin/sh
 pip install django-smtp-ssl
+```
+
+## 常用命令
+```bash
+docker compose up -d --force-recreate
 ```
