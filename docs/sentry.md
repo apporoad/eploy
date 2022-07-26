@@ -67,3 +67,22 @@ pip install django-smtp-ssl
 ```bash
 docker compose up -d --force-recreate
 ```
+
+
+## nginx 配置
+```nginx
+upstream sentry-server {
+        server 192.168.0.173:9000;
+}
+
+location ^~ /sentry/ {
+        proxy_pass         http://sentry-server/;
+        proxy_redirect    off;
+        proxy_set_header   Host              $host;
+        proxy_set_header   X-Real-IP         $remote_addr;
+        proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto    $scheme;
+}
+
+```
+
