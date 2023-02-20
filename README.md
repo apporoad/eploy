@@ -53,6 +53,7 @@ step by step install deployments
 44. [uni-app 脚本打包](./docs/uniapp.md)
 45. [json自定义编辑](./packs/jsonEdit.zip)
 46. [showdoc api接口管理](./docs/showdoc.md)
+47. [nodebb安装使用](https://zhuanlan.zhihu.com/p/533158990)
 
 ## cmds
 
